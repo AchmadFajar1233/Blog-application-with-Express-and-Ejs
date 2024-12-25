@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+<main>
+    <div class="main__container">
+        <form action="/" method="post" class="form">
+            <h1 style="color: #2e2e2e; margin-bottom: 1rem;">Buat Artikel</h1>
+            <label for="name">Masukan Judul</label>
+            <input type="text" id="name" name="title" required>
+            <label for="body">Masukan Body</label>
+            <textarea name="body" id="body" rows="20" cols="20" required></textarea>
+            <button type="submit">Post?</button>
+        </form>    
+    </div>
+</main>
+
+<%- include('partials/footer.ejs') %>

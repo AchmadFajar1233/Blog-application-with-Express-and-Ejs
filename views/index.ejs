@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+<main>
+    <div class="main__container">
+        
+        <% if(locals.data.length !== 0) { %> 
+            <% data.forEach((d) => { %> 
+                <% if (d) { %> 
+                    <div class="main__card">
+                        <a href="/article/<%= d.id %>">
+                            <div class="main__card-info">
+                                <div class="main__card-info_title">
+                                    <p><%= d.title %> </p>
+                                </div>
+                                <div>
+                                    <p><%= d.date %></p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="main__card-edit_and-delete">
+                            <a href="/edit/<%= d.id %>">Edit?</a>
+                            <form action="/delete/<%= d.id %>" method="post">
+                                <button class="btn__delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <%} %> 
+                <% }) %>
+        <% } else { %> 
+                <h1>Anda Belum Membuat Artikel Apapun</h1>
+            <% } %> 
+    </div>
+</main>
+<%- include('partials/footer.ejs') %>
